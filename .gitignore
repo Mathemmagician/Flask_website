@@ -4,5 +4,3 @@ flaskblog/static/profile_pics/
 flaskblog/site.db
 venv/
 __pycache__
-flaskblog/config.py
-
