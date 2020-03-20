@@ -1,0 +1,5 @@
+*.pyc
+.DS_Store
+flaskblog/static/profile_pics/
+flaskblog/site.db
+venv/
