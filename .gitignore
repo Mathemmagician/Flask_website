@@ -1,3 +1,8 @@
-.DS_Store
 *.pyc
-site.db
+.DS_Store
+flaskblog/static/profile_pics/
+flaskblog/site.db
+venv/
+__pycache__
+flaskblog/config.py
+
