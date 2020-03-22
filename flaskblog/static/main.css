@@ -1,26 +1,52 @@
 body {
-  background: #fafafa;
+  background: #eaeaed;
   color: #333333;
-  margin-top: 5rem;
+  //margin-top: 5rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: #444444;
+}
+a:hover {
+  text-decoration: none;
+}
+
+p {
+  overflow-wrap:break-word;
 }
 
 .bg-steel {
   background-color: #5f788a;
 }
 
-.site-header .navbar-nav .nav-link {
+.site-header {
+  background-color: white;
+  padding:10px;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+
+a.header-contact {
+  color: #8db0eb;
+}
+a.header-contact:hover {
+  color: #728bea;
+}
+
+.header-img {
+  height: 155px;
+  width: 155px;
+}
+
+.site-navbar .navbar-nav .nav-link {
   color: #cbd5db;
 }
 
-.site-header .navbar-nav .nav-link:hover {
+.site-navbar .navbar-nav .nav-link:hover {
   color: #ffffff;
 }
 
-.site-header .navbar-nav .nav-link.active {
+.site-navbar .navbar-nav .nav-link.active {
   font-weight: 500;
 }
 
@@ -43,6 +69,7 @@ a.article-title:hover {
 
 .article-content {
   white-space: pre-line;
+  word-wrap: break-word;
 }
 
 .article-img {
@@ -78,3 +105,11 @@ a.article-title:hover {
 .account-heading {
   font-size: 2.5rem;
 }
+
+.fa {
+  color: white;
+}
+.btn-social-icon {
+  margin-right: 10px;
+}
+
