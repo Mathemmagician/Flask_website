@@ -33,6 +33,5 @@ def contact():
     	send_contact_email(eemail, ttitle, bbody)
     	flash("Message sent! I'll get back to it as soon as possible!", "success")
     	return redirect(url_for('main.contact'))
-            
     return render_template('contact.html', title='Contact', form=form)
 
