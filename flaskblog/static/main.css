@@ -28,7 +28,7 @@ p {
 }
 
 a.header-contact {
-  color: #50bcfa;
+  color: #8db0eb;
 }
 a.header-contact:hover {
   color: #728bea;
@@ -136,9 +136,4 @@ a.article-title:hover {
   color: #444444;
   position: absolute; 
 }
-
-.btn-info {
-  
-}
-
 
