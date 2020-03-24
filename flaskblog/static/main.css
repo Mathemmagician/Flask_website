@@ -42,11 +42,11 @@ a.header-contact:hover {
 }
 
 .site-navbar .navbar-nav .nav-link {
-  color: #cbd5db;
+  color: #ced5db;
 }
 
 .site-navbar .navbar-nav .nav-link:hover {
-  color: #ffffff;
+  color: #50bcfa;
 }
 
 .site-navbar .navbar-nav .nav-link.active {
@@ -63,12 +63,12 @@ a.header-contact:hover {
 
 .site-main .content-section {
   border-left-color: #50bcfa; 
-  border-left-width: 5px;
+  border-left-width: 4px;
 }
 
 .site-sidebar .content-section {
   border-left-color: #ffa340;
-  border-left-width: 5px;
+  border-left-width: 4px;
 }
 
 .article-title {
@@ -136,4 +136,5 @@ a.article-title:hover {
   color: #444444;
   position: absolute; 
 }
+
 
