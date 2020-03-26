@@ -192,3 +192,16 @@ footer p {
   margin-top: 1em;
   max-height: 100%;
 }
+.card-technologies {
+  margin: 2em auto;
+  padding: 0px;
+  text-align: center;
+  font-family: "Monaco";
+}
+.card-technologies h6 {
+  text-align: center;
+}
+.card-technologies li {
+  border-color: #50bcfa;
+
+}

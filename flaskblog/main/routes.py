@@ -1,7 +1,10 @@
 from flask import render_template, request, Blueprint, flash, redirect, url_for
 from flaskblog.models import Post
 from flaskblog.main.forms import ContactForm
-from flaskblog.main.utils import send_contact_email
+from flaskblog.main.utils import send_contact_email, get_codeforces_rating, create_figure
+import io
+from flask import Response
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 
 
 main = Blueprint('main', __name__)
@@ -10,7 +13,7 @@ main = Blueprint('main', __name__)
 @main.route("/")
 @main.route("/home")
 def home():
-    return render_template('home.html', sidebar=True)
+    return render_template('home.html', sidebar=True, codeforces=True)
 
 
 @main.route("/about")
@@ -35,3 +38,15 @@ def contact():
     	return redirect(url_for('main.contact'))
     return render_template('contact.html', title='Contact', form=form)
 
+
+@main.route('/codeforces_history.png')
+def codeforces_png():
+    data = get_codeforces_rating()
+    if data == -1:
+        return None
+    else:
+        xs, ys = data
+        fig = create_figure(xs, ys)
+        output = io.BytesIO()
+        FigureCanvas(fig).print_png(output)
+        return Response(output.getvalue(), mimetype='image/png')

@@ -1,6 +1,143 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<h1> Development page</h1>
+
+<section class="jumbotron text-center">
+	<div class="container">
+	  <h1 class="jumbotron-heading">Development </h1>
+	  <!<p class="lead text-muted">(Highlighted projects)</p>
+	
+	</div>
+</section>
+
+<div class="album py-5 bg-light">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-lg-6 ">
+				<div class="card mb-4 box-shadow">
+					<div class="container-fluid row">
+						<div class="col-md-8">
+						  	<div class="container" style="height: 200px;"> 
+								<img class="card-img-top" src="{{ url_for('projects.static', filename='images/Flask_website.png') }}" alt="Card image cap">
+						  	</div>
+						    <div class="card-body">
+								<h5 class="card-title">Personal website</h5>
+								<p class="card-text">
+									The project of all projects is a meta-project including all other projects, i.e. this very website.
+									Built from scratch with internet's help.
+								</p>
+						      	<div class="d-flex justify-content-between align-items-center">
+							        <div class="btn-group">
+							          <button type="button" class="btn btn-sm btn-outline-secondary">
+							          	<a href="https://github.com/Mathemmagician/Flask_website">Github Link</a>
+							          </button>
+							        </div>
+							        
+						      	</div>
+						    </div>
+						</div>
+						<div class="col-md-4 card-technologies">
+					    	<h6> Technologies </h6>
+					        <ul class="list-group ml-4 ml-md-0" >
+					          	<li class="list-group-item"> Python </li>
+								<li class="list-group-item"> Flask </li>
+								<li class="list-group-item"> SQLite </li>
+								<li class="list-group-item"> Unicorn </li>
+								<li class="list-group-item"> Nginx </li>
+								<li class="list-group-item"> Github </li>
+								<li class="list-group-item"> Html/CSS </li>
+				        	</ul>
+					    </div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-lg-6 ">
+				<div class="card mb-4 box-shadow">
+					<div class="container-fluid row">
+						<div class="col-md-8">
+						  	<div class="container" style="height: 200px;"> 
+								<img class="card-img-top" src="{{ url_for('projects.static', filename='images/hashcode.jpg') }}" alt="Card image cap">
+						  	</div>
+						    <div class="card-body">
+								<h5 class="card-title"> Google HashCode 2020 </h5>
+								<p class="card-text">
+									Even though this was a competition,
+									we did a lot of Jupyter notebook style data analysis and algorythmic optimization,
+									which lies more in the development field. 
+								</p>
+						      	<div class="d-flex justify-content-between align-items-center">
+							        <div class="btn-group">
+							          <button type="button" class="btn btn-sm btn-outline-secondary">
+							          	<a href="https://github.com/Mathemmagician/HashCode2020">Github Link</a>
+							          </button>
+							        </div>
+							        
+						      	</div>
+						    </div>
+						</div>
+						<div class="col-md-4 card-technologies">
+					    	<h6> Technologies </h6>
+					        <ul class="list-group ml-4 ml-md-0" >
+					          	<li class="list-group-item"> Python </li>
+								<li class="list-group-item"> Jupyter </li>
+								<li class="list-group-item"> Pandas </li>
+								<li class="list-group-item"> Numpy </li>
+								<li class="list-group-item"> Matplotlib </li>
+				        	</ul>
+					    </div>
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="col-lg-6 ">
+				<div class="card mb-4 box-shadow">
+					<div class="container-fluid row">
+						<div class="col-md-8">
+						  	<div class="container" style="height: 200px;"> 
+								<img class="card-img-top" src="{{ url_for('projects.static', filename='images/stock.png') }}" alt="Card image cap">
+						  	</div>
+						    <div class="card-body">
+								<h5 class="card-title"> Stock Market History </h5>
+								<p class="card-text">
+									In this project I scrape the stock history of SNP 500 with Yahoo's API, visualize it, 
+									and perform some basic analysis, ex. building a heatmap matrix. 
+								</p>
+						      	<div class="d-flex justify-content-between align-items-center">
+							        <div class="btn-group">
+							          <button type="button" class="btn btn-sm btn-outline-secondary">
+							          	<a href="https://github.com/Mathemmagician/Stock_scraper">Github Link</a>
+							          </button>
+							        </div>
+							        
+						      	</div>
+						    </div>
+						</div>
+						<div class="col-md-4 card-technologies">
+					    	<h6> Technologies </h6>
+					        <ul class="list-group ml-4 ml-md-0" >
+					          	<li class="list-group-item"> Python </li>
+								<li class="list-group-item"> Beautifulsoup4 </li>
+								<li class="list-group-item"> Pandas </li>
+								<li class="list-group-item"> Numpy </li>
+								<li class="list-group-item"> Matplotlib </li>
+								<li class="list-group-item"> requests </li>
+				        	</ul>
+					    </div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+</div>
 
 {% endblock content %}
+
+
+
