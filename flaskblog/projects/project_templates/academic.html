@@ -1,0 +1,128 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+
+<section class="jumbotron text-center">
+<div class="container">
+  <h1 class="jumbotron-heading">Academic Work</h1>
+  <!-- <!<p class="lead text-muted">Below is a collection of my academic papers</p> -->
+</div>
+</section>
+
+<div class="album py-5 bg-light">
+<div class="container">
+
+  <div class="row">
+
+	<div class="col-md-6 col-xl-4">
+      <div class="card mb-4 box-shadow">
+      	<div class="container" style="height: 200px;"> 
+			<img class="card-img-top" src="{{ url_for('projects.static', filename='images/saturation_spectroscopy.png') }}" alt="Card image cap">
+      	</div>
+        <div class="card-body">
+          <h5 class="card-title">Saturation Spectroscopy</h5>
+          <p class="card-text">
+          	SS is an amazing technique used to fight Dopler Broadening. This was my favorite lab at Stony Brook. I have written
+          	sections: Theory, Measurements and Analysis.
+
+          	<div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{ url_for('projects.static', filename='papers/saturation_spectroscopy_report.pdf') }}">View PDF</a></button>
+            </div>
+            <small class="text-muted">Fall 2019</small>
+          </div>
+        </div>
+      </div>
+  	</div>
+
+
+    <div class="col-md-6 col-xl-4">
+      <div class="card mb-4 box-shadow">
+      	<div class="container" style="height: 200px;"> 
+        	<img class="card-img-top" src="{{ url_for('projects.static', filename='images/transistor.png') }}" alt="Card image cap">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Transistor Operation</h5>
+          <p class="card-text">
+          	This paper decsribes the structure of various transistors, history of their development, physics behind magic,
+          	applience in boolean mathmatics and their  use in modern computers. 
+          	<div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{ url_for('projects.static', filename='papers/Transistor_paper.pdf') }}">View PDF</a></button>
+            </div>
+            <small class="text-muted">Fall 2019</small>
+          </div>
+        </div>
+      </div>
+  	</div>
+
+
+    <div class="col-md-6 col-xl-4">
+      <div class="card mb-4 box-shadow">
+      	<div class="container" style="height: 200px;"> 
+        	<img class="card-img-top" src="{{ url_for('projects.static', filename='images/UED.png') }}" alt="Card image cap">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">TimePix Resolution Improvement </h5>
+          <p class="card-text">
+          	While working in Weinacht's lab, I wrote a Matlab software capable of improving the resolution of 
+          	collected molecular data by a factor of 3. Unfortunately, due to non-disclosure, 
+          	I am only able to share some results of the analysis.
+
+          	<div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{ url_for('projects.static', filename='papers/UED.pdf') }}">View PDF</a></button>
+            </div>
+            <small class="text-muted">Fall 2018, Spring 2019</small>
+          </div>
+        </div>
+      </div>
+  	</div>
+
+    <div class="col-md-6 col-xl-4">
+      <div class="card mb-4 box-shadow">
+      	<div class="container" style="height: 200px;"> 
+        	<img class="card-img-top" src="{{ url_for('projects.static', filename='images/voronoi.svg') }}" alt="Card image cap">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Voronoi Diagram</h5>
+          <p class="card-text">
+          	A Voronoi diagram is a partition of a plane into regions close to each of a given set of objects.
+          	While this papers introduces some mathematics, a good portion is devoted to the historical importance and ties to nature.
+          	<div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{ url_for('projects.static', filename='papers/Voronoi_paper.pdf') }}">View PDF</a></button>
+            </div>
+            <small class="text-muted">Spring 2019</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-xl-4">
+      <div class="card mb-4 box-shadow">
+      	<div class="container" style="height: 200px;"> 
+        	<img class="card-img-top" src="{{ url_for('projects.static', filename='images/circle_packing.png') }}" alt="Card image cap">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Thurston's Circle Packing</h5>
+          <p class="card-text">
+          	This paper presents a visualition algorithm for finding circle packing solutions corresponding to given planar graphs using Ricci flow.
+          	The idea is simple: start with random radii, associate curvature of the surface with geometric structure and then force it zero out with a simple differential equation.
+          	<div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{{ url_for('projects.static', filename='papers/Circle_packing_paper.pdf') }}">View PDF</a></button>
+            </div>
+            <small class="text-muted">Summer 2017</small>
+          </div>
+        </div>
+      </div>
+  	</div>
+
+  </div>
+</div>
+</div>
+
+
+{% endblock content %}

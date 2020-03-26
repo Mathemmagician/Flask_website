@@ -10,7 +10,7 @@ main = Blueprint('main', __name__)
 @main.route("/")
 @main.route("/home")
 def home():
-    return render_template('home.html')
+    return render_template('home.html', sidebar=True)
 
 
 @main.route("/about")
@@ -21,7 +21,7 @@ def about():
 def blog():
     page = request.args.get('page', 1, type=int)
     posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=5)
-    return render_template('blog.html', posts=posts)
+    return render_template('blog.html', posts=posts, sidebar=True)
 
 @main.route("/contact", methods=['GET', 'POST'])
 def contact():
