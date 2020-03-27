@@ -69,6 +69,7 @@ a.header-contact:hover {
 .site-sidebar .content-section {
   border-left-color: #ffa340;
   border-left-width: 4px;
+  text-align: center;
 }
 
 .article-title {
@@ -178,8 +179,11 @@ a.article-title:hover {
 }
 
 footer {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  background: #333;
+  color: #555;
 }
 
 footer p {
@@ -203,5 +207,16 @@ footer p {
 }
 .card-technologies li {
   border-color: #50bcfa;
-
 }
+
+.podcast-list {
+  list-style-type: none;
+  padding: 0;
+}
+.podcast-list li a {
+  color: #728bea;
+}
+.podcast-list li a:hover {
+  color: #ffa340;
+}
+

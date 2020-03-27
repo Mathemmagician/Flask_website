@@ -99,6 +99,7 @@
 
   <main role="main" class="container pt-3">
     <div class="row">
+
       {% if sidebar %}
         <div class="col-md-8 site-main">
       {% else %}
@@ -119,13 +120,13 @@
 
       {% if sidebar %}
         <div class="col-md-4 site-sidebar">
-          <div class="content-section">
-            <h3 style="text-align: center;"> Competitive Rating <small style='color:red;'> Live </small></h3>
 
-
-            <img src="codeforces_history.png" style="width: 100%;">
-
-          </div>
+          {% if codeforces %}
+            <div class="content-section">
+              <h3 style="text-align: center;"> Competitive Rating <small style='color:red;'> Live </small></h3>
+              <img src="codeforces_history.png" style="width: 100%;">
+            </div>
+          {% endif %}
 
           <div class="content-section">
             <h4> Featured Tweet </h4>
@@ -136,14 +137,16 @@
           </div>
 
           <div class="content-section">
-            <h3>Sidebar</h3>
-            <p class='text-muted'>Might put some interesting information
-              <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Latest Posts</li>
-                <li class="list-group-item list-group-item-light">Announcements</li>
-                <li class="list-group-item list-group-item-light">Cool Photos</li>
-              </ul>
-            </p>
+            <h3>Favorite Podcasts</h3>
+            <ul class='podcast-list'>
+              <li> <a href="http://podcasts.joerogan.net/"> Joe Rogan Experience </a></li>
+              <li> <a href="https://samharris.org/podcast/"> Making Sense </a></li>
+              <li> <a href="https://lexfridman.com/ai/"> Artificial Intelligence </a></li>
+              <li> <a href="https://talkpython.fm/"> Talk Python To Me </a></li>
+              <li> <a href="https://art19.com/shows/the-portal"> The Portal </a></li>
+              <li> <a href="https://www.preposterousuniverse.com/podcast/"> Mindscape </a></li>
+            </ul>
+            
           </div>
 
         </div>
@@ -151,6 +154,11 @@
 
     </div>
   </main>
+  
+
+  <footer>
+    <p>&copy; Ramil Aleskerov, 2020</p>
+  </footer>
 
 
   <!-- Optional JavaScript -->
