@@ -16,4 +16,4 @@ def development():
 
 @projects.route("/competitive")
 def competitive():
-    return render_template('competitive.html')
+    return render_template('competitive.html', title="Competitive")
