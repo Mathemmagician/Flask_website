@@ -3,3 +3,4 @@
 venv/
 __pycache__
 flaskblog/site.db
+site.db
