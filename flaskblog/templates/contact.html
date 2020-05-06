@@ -55,7 +55,8 @@
                 {% endif %}
             </div>
         </fieldset>
-        <div class="form-group">
+        {{ form.recaptcha }}
+        <div class="form-group" style='margin-top: 5px'>
             {{ form.submit(class="btn btn-outline-info") }}
         </div>
     </form>

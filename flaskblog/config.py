@@ -14,3 +14,8 @@ class Config:
     MAIL_DEFAULT_SENDER = config.get('EMAIL_USER')
     MAIL_USERNAME = config.get('EMAIL_USER')
     MAIL_PASSWORD = config.get('EMAIL_PASS')
+
+    RECAPTCHA_USE_SSL = False
+    RECAPTCHA_PUBLIC_KEY = config.get('RECAPTCHA_PUBLIC_KEY')
+    RECAPTCHA_PRIVATE_KEY = config.get('RECAPTCHA_PRIVATE_KEY')
+    RECAPTCHA_OPTIONS  = {'theme':'white'}
