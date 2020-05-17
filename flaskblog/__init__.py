@@ -18,12 +18,6 @@ mail = Mail()
 
 from flask_login import current_user
 
-class MyModelView(ModelView):
-
-    def is_accessible(self):
-        return True
-
-
 
 def create_app(config_class=Config):
 	app = Flask(__name__)
@@ -35,6 +29,10 @@ def create_app(config_class=Config):
 	mail.init_app(app)
 
 	from flaskblog.models import User, Post
+	class MyModelView(ModelView):
+	    def is_accessible(self):
+	    	return current_user == User.query.first()
+	
 	admin = Admin(app, name="Admin's Cave", template_mode='bootstrap3')
 	admin.add_view(MyModelView(User, db.session))
 	admin.add_view(MyModelView(Post, db.session))
