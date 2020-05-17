@@ -13,7 +13,7 @@ main = Blueprint('main', __name__)
 @main.route("/")
 @main.route("/home")
 def home():
-    return render_template('home.html', sidebar=True, codeforces=True)
+    return render_template('home.html', sidebar=True, codeforces=False)
 
 
 @main.route("/about")

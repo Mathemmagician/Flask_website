@@ -19,3 +19,5 @@ class Config:
     RECAPTCHA_PUBLIC_KEY = config.get('RECAPTCHA_PUBLIC_KEY')
     RECAPTCHA_PRIVATE_KEY = config.get('RECAPTCHA_PRIVATE_KEY')
     RECAPTCHA_OPTIONS  = {'theme':'white'}
+
+    FLASK_ADMIN_SWATCH = 'cerulean'
