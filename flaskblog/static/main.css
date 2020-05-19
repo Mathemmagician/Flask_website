@@ -224,3 +224,13 @@ footer p {
   color: #ffa340;
 }
 
+.post-text {
+  height: 300px;
+}
+
+.article-content img {
+  width: 100%;
+}
+iframe {
+  width: 100%;
+}

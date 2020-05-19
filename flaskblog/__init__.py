@@ -31,7 +31,7 @@ def create_app(config_class=Config):
 	from flaskblog.models import User, Post
 	class MyModelView(ModelView):
 	    def is_accessible(self):
-	    	return current_user == User.query.first()
+	    	return current_user == User.query.filter_by(email="ramil9898@gmail.com").first()
 	
 	admin = Admin(app, name="Admin's Cave", template_mode='bootstrap3')
 	admin.add_view(MyModelView(User, db.session))

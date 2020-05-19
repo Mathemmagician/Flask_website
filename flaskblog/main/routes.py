@@ -1,5 +1,5 @@
 from flask import render_template, request, Blueprint, flash, redirect, url_for
-from flaskblog.models import Post
+from flaskblog.models import User, Post
 from flaskblog.main.forms import ContactForm
 from flaskblog.main.utils import send_contact_email, get_codeforces_rating, create_figure
 import io
@@ -24,7 +24,8 @@ def about():
 def blog():
     page = request.args.get('page', 1, type=int)
     posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=5)
-    return render_template('blog.html', posts=posts, sidebar=True)
+    adminUser = User.query.filter_by(email="ramil9898@gmail.com").first()
+    return render_template('blog.html', posts=posts, sidebar=True, admin=adminUser)
 
 @main.route("/contact", methods=['GET', 'POST'])
 def contact():
