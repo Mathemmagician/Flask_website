@@ -1,7 +1,8 @@
 *.pyc
 .DS_Store
-venv/
+flvenv/
 __pycache__
 flaskblog/site.db
 site.db
 *.db
+flaskblog/static/profile_pics/
