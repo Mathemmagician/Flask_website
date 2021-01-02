@@ -4,7 +4,7 @@
         <form method="POST" action="">
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Join Today</legend>
+                <legend class="border-bottom mb-4">Why would you register? No idea, but here we are, so might as well. </legend>
                 <div class="form-group">
                     {{ form.username.label(class="form-control-label") }}
 
@@ -33,7 +33,7 @@
                     {% endif %}
                 </div>
                 <div class="form-group">
-                    {{ form.password.label(class="form-control-label") }} <i>(Please don't use personal passwords)</i>
+                    {{ form.password.label(class="form-control-label") }}
                     {% if form.password.errors %}
                         {{ form.password(class="form-control form-control-lg is-invalid") }}
                         <div class="invalid-feedback">

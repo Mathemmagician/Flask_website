@@ -24,8 +24,7 @@ def about():
 def blog():
     page = request.args.get('page', 1, type=int)
     posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=5)
-    adminUser = User.query.filter_by(email="ramil9898@gmail.com").first()
-    return render_template('blog.html', posts=posts, sidebar=True, admin=adminUser)
+    return render_template('blog.html', posts=posts, sidebar=True)
 
 @main.route("/contact", methods=['GET', 'POST'])
 def contact():

@@ -12,4 +12,27 @@ If it inspires you to build your own website, please check out [Corey Schafer's 
 He is just an awesome human being and he shows you how to put all of these tools together really well.
 
 
+## Useful
+
+
+### For migrations:
+
+https://flask-migrate.readthedocs.io/en/latest/
+
+```
+$ flask db migrate
+$ flask db migrate
+$ flask db upgrade
+```
+
+```
+$ flask db stamp head // might help sometimes
+```
+
+```
+>>> from yourapp import create_app
+>>> app = create_app()
+>>> app.app_context().push()
+```
+
 
