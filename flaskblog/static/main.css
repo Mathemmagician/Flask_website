@@ -237,3 +237,17 @@ iframe {
 .SandboxRoot.env-bp-min .timeline-Tweet-text {
   font-size: 20px !important;
 }
+
+.comment {
+  border: 0px solid !important;
+  border-color:  #ffa340;
+  font-family: "Monaco";
+}
+
+a.article-comment{
+  color: #728bea;
+}
+a.article-comment:hover {
+  color: #ffa340;
+}
+

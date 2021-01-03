@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_mail import Mail
@@ -9,6 +10,7 @@ from flask_admin.contrib.sqla import ModelView
 
 
 db = SQLAlchemy()
+migrate = Migrate()
 bcrypt = Bcrypt()
 login_manager = LoginManager()
 login_manager.login_view = 'users.login'
@@ -24,18 +26,21 @@ def create_app(config_class=Config):
 	app.config.from_object(Config)
 
 	db.init_app(app)
+	migrate.init_app(app, db)
 	bcrypt.init_app(app)
 	login_manager.init_app(app)
 	mail.init_app(app)
 
-	from flaskblog.models import User, Post
+	from flaskblog.models import User, Post, Comment
 	class MyModelView(ModelView):
 	    def is_accessible(self):
-	    	return current_user == User.query.filter_by(email="ramil9898@gmail.com").first()
+	    	admins = User.query.filter_by(is_admin=1)
+	    	return current_user in admins
 	
 	admin = Admin(app, name="Admin's Cave", template_mode='bootstrap3')
 	admin.add_view(MyModelView(User, db.session))
 	admin.add_view(MyModelView(Post, db.session))
+	admin.add_view(MyModelView(Comment, db.session))
 
 	from flaskblog.users.routes import users
 	from flaskblog.posts.routes import posts

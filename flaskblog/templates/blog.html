@@ -9,11 +9,12 @@
               <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
             </div>
             <h3><a class="article-title" href="{{ url_for('posts.post', post_id=post.id) }}">{{ post.title }}</a></h3>
-            {% if post.author == admin %}
+            {% if post.author.is_admin %}
               <p class="article-content">{{ post.content | safe }}</p>
             {% else %}
               <p class="article-content">{{ post.content }}</p>
             {% endif %}
+            <a class="mr-2 float-right article-comment" href="{{ url_for('posts.post', post_id=post.id) }}"> Comments ({{ post.comments|count }})</a>
           </div>
         </article>
     {% endfor %}

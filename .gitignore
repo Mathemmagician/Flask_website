@@ -1,5 +1,6 @@
 *.pyc
 .DS_Store
+venv/
 flvenv/
 __pycache__
 flaskblog/site.db
