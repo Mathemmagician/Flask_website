@@ -1,4 +1,5 @@
 # My Website
+
 I've always wanted to learn Flask and SQL, improve my Git/GitHub skills, work with a dedicated Linux 
 server and make fully working website.
 It's just a really nice idea to have an easily sharable personal space which you built from scratch, where you can show off
@@ -20,14 +21,12 @@ He is just an awesome human being and he shows you how to put all of these tools
 https://flask-migrate.readthedocs.io/en/latest/
 
 ```
-$ flask db migrate
+$ flask db init
 $ flask db migrate
 $ flask db upgrade
 ```
 
-```
-$ flask db stamp head // might help sometimes
-```
+### For factory application context:
 
 ```
 >>> from yourapp import create_app

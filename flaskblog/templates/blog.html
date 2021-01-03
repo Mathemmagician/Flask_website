@@ -14,6 +14,7 @@
             {% else %}
               <p class="article-content">{{ post.content }}</p>
             {% endif %}
+            <a class="mr-2 float-right article-comment" href="{{ url_for('posts.post', post_id=post.id) }}"> Comments ({{ post.comments|count }})</a>
           </div>
         </article>
     {% endfor %}

@@ -12,6 +12,8 @@ posts = Blueprint('posts', __name__)
 @posts.route("/post/new", methods=['GET', 'POST'])
 @login_required
 def new_post():
+    if not current_user.is_admin:
+        abort(403)
     form = PostForm()
     if form.validate_on_submit():
         post = Post(title=form.title.data, content=form.content.data, author=current_user)

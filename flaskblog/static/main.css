@@ -243,3 +243,11 @@ iframe {
   border-color:  #ffa340;
   font-family: "Monaco";
 }
+
+a.article-comment{
+  color: #728bea;
+}
+a.article-comment:hover {
+  color: #ffa340;
+}
+
