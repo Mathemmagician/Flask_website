@@ -1,8 +1,13 @@
-import os
-import json
 
-with open('/etc/flask_blog_config.json') as config_file:
-    config = json.load(config_file)
+import json
+from dotenv import dotenv_values
+
+
+config = dotenv_values()
+
+# Depreciated
+# with open('/etc/flask_blog_config.json') as config_file:
+#     config = json.load(config_file)
 
 
 class Config:
