@@ -61,3 +61,11 @@ class Comment(db.Model):
     def __repr__(self):
         return f"Comment id '{self.id}' from post id '{self.post_id}' by user id '{self.user_id}' on '{self.date_posted}'"
 
+
+class Goat(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    info = db.Column(db.Text, nullable=False)
+    score = db.Column(db.Integer, nullable=False)
+    image_url = db.Column(db.Text, nullable=False, default='https://i.pinimg.com/originals/35/b6/65/35b6653b2250e15390b8aa7056870289.jpg')
+

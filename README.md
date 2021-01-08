@@ -21,6 +21,7 @@ He is just an awesome human being and he shows you how to put all of these tools
 https://flask-migrate.readthedocs.io/en/latest/
 
 ```
+$ export FLASK_APP=flaskblog
 $ flask db init
 $ flask db migrate
 $ flask db upgrade

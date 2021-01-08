@@ -250,4 +250,14 @@ a.article-comment{
 a.article-comment:hover {
   color: #ffa340;
 }
-
+.goat .goat-card h2 {
+  text-align: center;
+}
+.goat .goat-card {
+  text-align: center;
+}
+.goat .rounded-circle {
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+}

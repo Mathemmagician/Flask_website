@@ -31,7 +31,7 @@ def create_app(config_class=Config):
 	login_manager.init_app(app)
 	mail.init_app(app)
 
-	from flaskblog.models import User, Post, Comment
+	from flaskblog.models import User, Post, Comment, Goat
 	class MyModelView(ModelView):
 	    def is_accessible(self):
 	    	admins = User.query.filter_by(is_admin=1)
@@ -41,6 +41,7 @@ def create_app(config_class=Config):
 	admin.add_view(MyModelView(User, db.session))
 	admin.add_view(MyModelView(Post, db.session))
 	admin.add_view(MyModelView(Comment, db.session))
+	admin.add_view(MyModelView(Goat, db.session))
 
 	from flaskblog.users.routes import users
 	from flaskblog.posts.routes import posts

@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+
+{% block head %}
+
+<script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.js"></script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+<script>
+  $(function () {
+    $('[data-toggle="popover"]').popover()
+  })
+</script>
+
+{% endblock head %}
+
+
+{% block content %}
+
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1 class="jumbotron-heading">Greatest of All Time</h1>
+    <p class="lead text-muted">Below is my list of people who are purely awesome</p>
+    {% if current_user.is_admin %}
+      <a class="btn btn-primary" href="{{ url_for('projects.new_goat') }}" role="button"> New Goat </a>
+    {% endif %}
+  </div>
+</section>
+
+<div class="album py-5 bg-light">
+  <div class="container goat" id="goat-container">
+    <div class="row">
+
+      {% for goat in goats %}
+        <div class="col-xl-3 col-md-4 col-sm-6 goat-card">
+          <img class="rounded-circle circle-img" src="{{ goat.image_url }}" 
+            data-toggle="popover" data-trigger="hover" 
+            title="{{ goat.name }}" data-content="{{ goat.info }}"> 
+        </div>
+      {% endfor %}
+
+    </div>
+
+    <!-- <div id="goat-canvas"> </div> -->
+  </div>
+</div>
+
+<script>
+  var goats = {{ goats|tojson }};
+</script>
+<script id="goat-js" src="{{url_for('projects.static', filename='goat.js')}}"></script>
+
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+

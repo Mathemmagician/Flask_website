@@ -102,9 +102,9 @@
       </form>
   </div>
 
-{% else %}
-  <a href="{{ url_for('users.login') }}">Please Login to comment</a>
-{% endif %}
+  {% else %}
+    <a href="{{ url_for('users.login') }}">Please Login to comment</a>
+  {% endif %}
 
 
   <!-- Modal -->
