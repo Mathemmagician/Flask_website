@@ -48,11 +48,13 @@ def create_app(config_class=Config):
 	from flaskblog.main.routes import main
 	from flaskblog.errors.handlers import errors
 	from flaskblog.projects.routes import projects
+	from flaskblog.apis.routes import blueprint as api
 	app.register_blueprint(users)
 	app.register_blueprint(posts)
 	app.register_blueprint(main)
 	app.register_blueprint(errors)
 	app.register_blueprint(projects)
+	app.register_blueprint(api, url_prefix='/api')
 
 	return app
 
