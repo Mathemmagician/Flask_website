@@ -1,7 +1,7 @@
 from flask import render_template, request, Blueprint, flash, redirect, url_for
 from flaskblog.models import User, Post
 from flaskblog.main.forms import ContactForm
-from flaskblog.main.utils import send_contact_email, get_codeforces_rating, create_figure
+from flaskblog.main.utils import send_contact_email, get_codeforces_rating, get_lichess_rating, create_figure
 import io
 from flask import Response
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
@@ -46,7 +46,20 @@ def codeforces_png():
         return None
     else:
         xs, ys = data
-        fig = create_figure(xs, ys)
+        fig = create_figure(xs, ys, title='Codeforces', marker='^', ls='--', color='#ffa340')
+        output = io.BytesIO()
+        FigureCanvas(fig).print_png(output)
+        return Response(output.getvalue(), mimetype='image/png')
+
+
+@main.route('/lichess_history.png')
+def lichess_png():
+    data = get_lichess_rating()
+    if data == -1:
+        return None
+    else:
+        xs, ys = data
+        fig = create_figure(xs, ys, title='Lichess Blitz', ms=2, lw=1, color='#50bcfa')
         output = io.BytesIO()
         FigureCanvas(fig).print_png(output)
         return Response(output.getvalue(), mimetype='image/png')
