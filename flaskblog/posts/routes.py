@@ -4,6 +4,7 @@ from flask_login import current_user, login_required
 from flaskblog import db
 from flaskblog.models import User, Post, Comment
 from flaskblog.posts.forms import PostForm, CommentForm
+from flaskblog.posts.utils import save_post_image
 
 
 posts = Blueprint('posts', __name__)
@@ -19,6 +20,9 @@ def new_post():
         post = Post(title=form.title.data, content=form.content.data, author=current_user)
         db.session.add(post)
         db.session.commit()
+        if form.images.data:
+            for image_id, image in enumerate(form.images.data, 1):
+                image_filename = save_post_image(image, post_id=post.id, image_id=image_id)
         flash('Post has been created', 'success')
         return redirect(url_for('main.blog'))
     return render_template('create_post.html', title='New Post', 

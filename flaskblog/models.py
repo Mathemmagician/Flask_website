@@ -1,3 +1,4 @@
+import re
 from datetime import datetime
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from flask import current_app
@@ -38,7 +39,6 @@ class User(db.Model, UserMixin):
     def __repr__(self):
         return f"User('{self.username}', '{self.email}', '{self.image_file}')"
 
-
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
@@ -49,6 +49,11 @@ class Post(db.Model):
 
     def __repr__(self):
         return f"Post('{self.title}', '{self.date_posted}')"
+
+    def media_content(self):
+        # replace all <img X.ext> with proper image tags
+        content = re.sub(r'<img (\d*)\.(jpg|png)>', fr'<img src="/static/blog_imgs/post_{self.id}.image_\1.jpg">', self.content)
+        return content
 
 
 class Comment(db.Model):
