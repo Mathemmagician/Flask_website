@@ -52,7 +52,7 @@ class Post(db.Model):
 
     def media_content(self):
         # replace all <img X.ext> with proper image tags
-        content = re.sub(r'<img (\d*)\.(jpg|png)>', fr'<img src="/static/blog_imgs/post_{self.id}.image_\1.jpg">', self.content)
+        content = re.sub(r'<img (\d*)\.(jpg|png|gif)>', fr'<img src="/static/blog_imgs/post_{self.id}.image_\1.\2">', self.content)
         return content
 
 
