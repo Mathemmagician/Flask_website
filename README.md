@@ -5,7 +5,7 @@ server and make fully working website.
 It's just a really nice idea to have an easily sharable personal space which you built from scratch, where you can show off
 your personal projects, ideas and hobbies. Hopefully you enjoy it as much as I do!
 
-This is the product of my efforts: www.Ramilus.com
+This is the product of my efforts: https://www.Ramilus.com
 
 I'll be updating it regularly since I now have all the time in the world.
 
